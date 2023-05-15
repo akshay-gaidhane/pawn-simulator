@@ -1,0 +1,27 @@
+<%= form_with(model: chess_board) do |form| %>
+  <% if chess_board.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(chess_board.errors.count, "error") %> prohibited this chess_board from being saved:</h2>
+
+      <ul>
+        <% chess_board.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :width, style: "display: block" %>
+    <%= form.number_field :width %>
+  </div>
+
+  <div>
+    <%= form.label :height, style: "display: block" %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

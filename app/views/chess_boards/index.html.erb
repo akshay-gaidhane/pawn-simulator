@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chess Board</title>
+</head>
+<body>
+  <h1>Chess Board - Pawn Movement</h1>
+  <h2>Commands</h2>
+  <%= form_with url: move_chess_board_path(1) , method: :post do |form| %>
+    <div class="field">
+      <%= form.text_area :move_piece, rows: 5, cols: 50 %>
+    </div>
+    <%= form.submit "Place Pawn" %>
+  <% end %>
+  <br>
+</body>
+</html>
